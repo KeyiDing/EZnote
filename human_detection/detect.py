@@ -47,8 +47,9 @@ def detect(frame):
     for score, (ymin,xmin,ymax,xmax), label in zip(pred_scores, pred_boxes, pred_labels):
         if score < 0.5:
             continue          
+        
         points = np.array([[xmin,ymin],[xmax,ymin],[xmax,ymax],[xmin,ymax]])
-        img_boxes = cv2.fillPoly(frame, pts = [points], color =(np.nan,np.nan,np.nan))
+        img_boxes = cv2.fillPoly(frame, pts = [points], color =(0,0,0))
         img_boxes  = imutils.resize(img_boxes, height=720)
   
     return img_boxes
