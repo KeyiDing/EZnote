@@ -30,6 +30,8 @@ def main():
             continue
         #Capture frame-by-frame
         ret, frame = cap.read()
+        if frame is None:
+            break
         
         # add blackboad detection
         img_boxes = detect.detect(frame)

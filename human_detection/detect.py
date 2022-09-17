@@ -19,7 +19,7 @@ labels = labels['OBJECT (2017 REL.)']
 
 def detect(frame):
     #Resize to respect the input_shape
-    inp = imutils.resize(frame, height=512)
+    # inp = imutils.resize(frame, height=512)
     inp = frame
     
     # cv2.imwrite("frame.png", frame)
@@ -47,9 +47,17 @@ def detect(frame):
     for score, (ymin,xmin,ymax,xmax), label in zip(pred_scores, pred_boxes, pred_labels):
         if score < 0.5:
             continue          
-        
+    
+        xmax += 0.25*(xmax-xmin)
+        xmax = int(xmax)
+        if xmax > 1079:
+            xmax = 1079
+        xmin -= 0.25*(xmax-xmin)
+        xmin = int(xmin)
+        if xmin < 0:
+            xmin = 0
+            
         points = np.array([[xmin,ymin],[xmax,ymin],[xmax,ymax],[xmin,ymax]])
         img_boxes = cv2.fillPoly(frame, pts = [points], color =(0,0,0))
-        img_boxes  = imutils.resize(img_boxes, height=720)
   
     return img_boxes
