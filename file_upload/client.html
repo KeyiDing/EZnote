@@ -5,147 +5,160 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-<link rel="apple-touch-icon" sizes="180x180" href="/Favicons/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/Favicons/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/Favicons/favicon-16x16.png">
-<link rel="mask-icon" href="/Favicons/safari-pinned-tab.svg" color="#5bbad5">
-<link rel="shortcut icon" href="/Favicons/favicon.ico">
-<meta name="msapplication-TileColor" content="#ffffff">
-<meta name="theme-color" content="#ffffff">
-<meta property="og:type" content="website" />
-<link rel="manifest" href="/Favicons/manifest.json">
-<link rel="stylesheet" href="main.css" type="text/css" />
-<script src=" https://unpkg.com/axios@0.24.0/dist/axios.min.js"></script>
 
-<script async defer id="gapi" src="https://apis.google.com/js/platform.js"></script>
+  <link rel="apple-touch-icon" sizes="180x180" href="/Favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/Favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/Favicons/favicon-16x16.png">
+  <link rel="mask-icon" href="/Favicons/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="/Favicons/favicon.ico">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+  <meta property="og:type" content="website" />
+  <link rel="manifest" href="/Favicons/manifest.json">
+  <link rel="stylesheet" href="main.css" type="text/css" />
+  <script src=" https://unpkg.com/axios@0.24.0/dist/axios.min.js"></script>
+
+  <script async defer id="gapi" src="https://apis.google.com/js/platform.js"></script>
 </head>
 
 <body>
 
 
-<div class="global-progress brand-color"></div>
-<header class="layout-header">
-<nav class="layout-header-nav">
-<div class="logo-wrapper">
-<a class="logo img-logo" href="/">
-<img width="24" height="21"  src = "images/logo.png">
-</img>
-<span class="logo-text">EZnote</span>
-</a>
-</div>
-<div class="page-title">
-<h1><span class="converter-icon"></span><span class="main-title js-main-title">Online Automatic Note Taker</span></h1>
-</div>
-<div class="header-links">
-<div class="user-menu">
-<a href="/a" class="menu-item profile-link show-auth">
-Home
-</a>
-<a id="SignUpHeader" href="/membership" class="menu-item show-unauth sign-up btn btn-outline brand-border brand-text">About us</a>
-</div>
-</div>
-<div class="mobile-hamburger js-toggle-nav">
-</div>
-<div class="top-menu-container hidden">
-<div class="js-close-mobile-menu">
-<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><defs></defs><path stroke="#313131" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 22a10 10 0 100-20 10 10 0 000 20zM15 9l-6 6M9 9l6 6"></path></svg>
-</div>
-<div class="hide-desktop show-unauth">
-<a class="btn btn-outline brand-border brand-text" href="/membership">
-About us
-</a>
-<a href="/a/si">
-Home
-</a>
-</div>
-</div>
-</nav>
-</header>
+  <div class="global-progress brand-color"></div>
+  <header class="layout-header">
+    <nav class="layout-header-nav">
+      <div class="logo-wrapper">
+        <a class="logo img-logo" href="/file_upload/client.html">
+          <img style="vertical-align:middle" width="35" height="35" src="images/logo.jpg">
+          </img>
+          <span class="logo-text">EZnote</span>
+        </a>
+      </div>
+      <div class="page-title">
+        <h1><span class="converter-icon"></span><span class="main-title js-main-title">Online Automated Note-Taking Tool</span></h1>
+      </div>
+      <div class="header-links">
+        <div class="user-menu">
+          <a href="/file_upload/client.html" class="menu-item profile-link show-auth">
+            Home
+          </a>
+          <a id="SignUpHeader" href="/file_upload/client.html"
+            class="menu-item show-unauth sign-up btn btn-outline brand-border brand-text">About us</a>
+        </div>
+      </div>
+      <div class="mobile-hamburger js-toggle-nav">
+      </div>
+      <div class="top-menu-container hidden">
+        <div class="js-close-mobile-menu">
+          <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <defs></defs>
+            <path stroke="#313131" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M12 22a10 10 0 100-20 10 10 0 000 20zM15 9l-6 6M9 9l6 6"></path>
+          </svg>
+        </div>
+        <div class="hide-desktop show-unauth">
+          <a class="btn btn-outline brand-border brand-text" href="/membership">
+            About us
+          </a>
+          <a href="/a/si">
+            Home
+          </a>
+        </div>
+      </div>
+    </nav>
+  </header>
 
-<main class="layout-main">
-<div class="work-area-container js-dropzone">
-<div class="start-panel file-upload-shrink">
-<div class="dashes">
-<h2 class="main-subheader">Your All-In-One Automated Note-Taking Tool</h2>
-  <input type="file" id="fileInput">
-  <button id="uploadButton">upload</button>
-    <script>
+  <main class="layout-main">
+    <div class="work-area-container js-dropzone">
+      <div class="start-panel file-upload-shrink">
+        <div class="dashes">
+          <div class="upload-video-container">
+            <label class="custom-file-upload">
+              <input type="file" id="fileInput">
+              Select your lecture video
+            </label>
+            <button class="button" id="uploadButton">upload</button>
+          </div>
 
-    document.getElementById("uploadButton").onclick = () => {
-      let fileElement = document.getElementById('fileInput')
 
-      // check if user had selected a file
-      if (fileElement.files.length === 0) {
-        alert('please choose a file')
-        return
-      }
+          <script>
 
-      let file = fileElement.files[0]
+            document.getElementById("uploadButton").onclick = () => {
+              let fileElement = document.getElementById('fileInput')
 
-      let formData = new FormData();
-      formData.set('file', file);
+              // check if user had selected a file
+              if (fileElement.files.length === 0) {
+                alert('please choose a file')
+                return
+              }
 
-      axios.post("http://localhost:3001/upload-single-file", formData, {
-        onUploadProgress: progressEvent => {
-          const percentCompleted = Math.round(
-            (progressEvent.loaded * 100) / progressEvent.total
-          );
-          console.log(`upload process: ${percentCompleted}%`);
-        }
-      })
-        .then(res => {
-          console.log(res.data)
-          console.log(res.data.url)
-        })
-    }
+              let file = fileElement.files[0]
 
-  </script>
-</div>
-<div class="layout-container colored border-bottom start-panel">
-<div class="content-wrapper" itemscope itemtype="https://schema.org/HowTo">
-<section class="howto-container">
-<div itemprop="tool" itemscope itemtype="https://schema.org/HowToTool">
-<meta itemprop="name" content="Online PDF Converter" />
-<meta itemprop="url" content="https://www.freepdfconvert.com" />
-</div>
-<h2 itemprop="name">How to Convert Files to and from PDF Free</h2>
-<meta itemprop="inLanguage" content="en" />
-<ol class="howto-grid">
-<li class="howto-column" itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
-<meta itemprop="position" content="1" />
-<span itemprop="text">
-Select the Word, Excel, PowerPoint, PDF or other file you wish to convert.
-</span>
-</li>
-<li class="howto-column" itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
-<meta itemprop="position" content="2" />
-<span itemprop="text">
-Our free PDF creator will convert your document to PDF or from PDF in seconds.
-</span>
-</li>
-<li class="howto-column" itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
-<meta itemprop="position" content="3" />
-<span itemprop="text">
-Your new document will be ready to download immediately. After the download is complete, any remaining files uploaded will be purged from our server.
-</span>
-</li>
-</ol>
-</section>
-</div>
-</div>
-</div>
-<form class="dialog url-input-form hidden" action="/" method="post">
-<div class="input-group">
-<input class="url-input flex-stretch" id="url_input" type="url" placeholder="http://example.com/myfile.docx" required autofocus />
-</div>
-<div class="actions">
-<button type="submit" class="ok btn brand-color">Enter</button>
-</div>
-</form>
-<div class="converter-selector-container hidden">
-<section class="converter-selector">
-<div class="files ro" data-template-file="
+              let formData = new FormData();
+              formData.set('file', file);
+
+              axios.post("http://localhost:3001/upload-single-file", formData, {
+                onUploadProgress: progressEvent => {
+                  const percentCompleted = Math.round(
+                    (progressEvent.loaded * 100) / progressEvent.total
+                  );
+                  console.log(`upload process: ${percentCompleted}%`);
+                }
+              })
+                .then(res => {
+                  console.log(res.data)
+                  console.log(res.data.url)
+                })
+            }
+
+          </script>
+        </div>
+        <div class="layout-container colored border-bottom start-panel">
+          <div class="content-wrapper" itemscope itemtype="https://schema.org/HowTo">
+            <section class="howto-container">
+              <div itemprop="tool" itemscope itemtype="https://schema.org/HowToTool">
+                <meta itemprop="name" content="Online PDF Converter" />
+                <meta itemprop="url" content="https://www.freepdfconvert.com" />
+              </div>
+              <h2 itemprop="name">How to Convert Files to and from PDF Free</h2>
+              <meta itemprop="inLanguage" content="en" />
+              <ol class="howto-grid">
+                <li class="howto-column" itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
+                  <meta itemprop="position" content="1" />
+                  <span itemprop="text">
+                    Select the Word, Excel, PowerPoint, PDF or other file you wish to convert.
+                  </span>
+                </li>
+                <li class="howto-column" itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
+                  <meta itemprop="position" content="2" />
+                  <span itemprop="text">
+                    Our free PDF creator will convert your document to PDF or from PDF in seconds.
+                  </span>
+                </li>
+                <li class="howto-column" itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
+                  <meta itemprop="position" content="3" />
+                  <span itemprop="text">
+                    Your new document will be ready to download immediately. After the download is complete, any
+                    remaining files uploaded will be purged from our server.
+                  </span>
+                </li>
+              </ol>
+            </section>
+          </div>
+        </div>
+      </div>
+      <form class="dialog url-input-form hidden" action="/" method="post">
+        <div class="input-group">
+          <input class="url-input flex-stretch" id="url_input" type="url" placeholder="http://example.com/myfile.docx"
+            required autofocus />
+        </div>
+        <div class="actions">
+          <button type="submit" class="ok btn brand-color">Enter</button>
+        </div>
+      </form>
+      <div class="converter-selector-container hidden">
+        <section class="converter-selector">
+          <div class="files ro" data-template-file="
         <div class='file-item'>
             <main class='file-item-main'>
                 <div class='thumbnail-wrapper'>
@@ -162,17 +175,19 @@ Your new document will be ready to download immediately. After the download is c
             </footer>
         </div>
         ">
-</div>
-<div class="sticky-panel converter-panel-container hidden">
-<div class="menubottom-container converter-panel">
-<h2 class="subtitle">Select converter:</h2>
-<div class="converters menu-dropdown converter-menu bottom" data-template-btn="<a class='converter-btn {{class}} img-{{class}}' data-id='{{id}}'><span>{{name}}</span></a>"></div>
-</div>
-</div>
-</section>
-</div>
-<section class="manager-container hidden">
-<div class="files" data-template-file="
+          </div>
+          <div class="sticky-panel converter-panel-container hidden">
+            <div class="menubottom-container converter-panel">
+              <h2 class="subtitle">Select converter:</h2>
+              <div class="converters menu-dropdown converter-menu bottom"
+                data-template-btn="<a class='converter-btn {{class}} img-{{class}}' data-id='{{id}}'><span>{{name}}</span></a>">
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <section class="manager-container hidden">
+        <div class="files" data-template-file="
             <section class='file-item draggable js-file-item' title='{{name}}'>
                 <div class='file-item-wrapper'>
                 <header class='file-item-header'>
@@ -222,16 +237,17 @@ Your new document will be ready to download immediately. After the download is c
                 </div>
              </div>
         ">
-</div>
-<div class="side-panel" id="actions-container">
-<div class="panel-content">
-<div class="actions-container disabled" data-convert-btn="<button class='brand-color proceed-btn convert-btn'>{{lable}}</button>">
-</div>
-</div>
-</div>
-</section>
-<section class="result-container hidden">
-<div class="files ro" data-template-file="
+        </div>
+        <div class="side-panel" id="actions-container">
+          <div class="panel-content">
+            <div class="actions-container disabled"
+              data-convert-btn="<button class='brand-color proceed-btn convert-btn'>{{lable}}</button>">
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="result-container hidden">
+        <div class="files ro" data-template-file="
         <a class='file-item' target='_blank'>
             <main class='file-item-main'>
                 <div class='thumbnail-wrapper'>
@@ -255,132 +271,182 @@ Your new document will be ready to download immediately. After the download is c
             </footer>
         </a>
         ">
-<div class='job-spinner fixed-item hidden'>
-<div class='file-item'>
-<main>
-<div class='spinner img-spinner'>
-<svg width='50' height='42' fill='none' xmlns='http://www.w3.org/2000/svg'>
-<path class='brand-color' fill-rule='evenodd' clip-rule='evenodd' d='M22.2 1.53C22.2.68 22.9 0 23.74 0A21.97 21.97 0 0145.7 21.23l1.7-1.7a1.53 1.53 0 012.16 2.16l-4.48 4.48c-.33.33-.76.48-1.19.45-.43.03-.86-.12-1.19-.45l-4.48-4.48a1.53 1.53 0 012.16-2.16l2.28 2.28A18.92 18.92 0 0023.73 3.05c-.84 0-1.52-.68-1.52-1.52zm5.6 38.25c0 .84-.69 1.53-1.53 1.53A21.97 21.97 0 014.3 20.08l-1.7 1.7a1.53 1.53 0 11-2.16-2.16l4.48-4.49c.33-.32.76-.47 1.19-.44.43-.03.86.12 1.19.44l4.48 4.49a1.53 1.53 0 01-2.16 2.16L7.35 19.5a18.92 18.92 0 0018.92 18.75c.84 0 1.52.68 1.52 1.53z' fill='#E74C3C' />
-</svg>
-</div>
-</main>
-<footer class='file-item-footer'>
-<div class='file-name'>Uploading...</div>
-</footer>
-</div>
-</div>
-</div>
-<div class="sticky-panel download-container hidden">
-<div class="download-wrapper">
-<div class="brand-btn-container brand-color">
-<a class="btn-wrapper download-btn" download href="#">
-<div class="button-icon">
-<svg width="26" height="26" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M11.94.97a.97.97 0 011.94 0V17.8l1.3-1.3a.97.97 0 111.37 1.38l-2.85 2.84c-.21.21-.49.3-.76.29a.97.97 0 01-.75-.29l-2.85-2.84a.97.97 0 111.37-1.38l1.23 1.23V.97zm13.08 10.67c.52 0 .95.42.95.94v7.55A5.87 5.87 0 0120.09 26H5.87A5.87 5.87 0 010 20.13v-7.55a.94.94 0 011.89 0v7.55c0 2.2 1.78 3.98 3.98 3.98H20.1c2.2 0 3.99-1.78 3.99-3.98v-7.55c0-.52.42-.94.94-.94z" fill="#fff" />
-</svg>
-</div>
-<span class="btn-label">
-Download
-</span>
-</a>
-</div>
-<div class="external-repos">
-<div class="icon google-icon brand-border-on-hover js-save-to-gdrive-btn disabled" title="Save to Google Drive">
-<div id="gdrive-btn"></div>
-</div>
-<div class="icon dropbox-icon brand-border-on-hover js-save-to-dropbox-btn disabled" title="Save to Dropbox"></div>
-<div class="icon remove-icon brand-border-on-hover js-remove-btn" title="Remove"></div>
-</div>
-<div class="other-actions">
-<div class="start-over" onclick="location.href = window.location.href.split('#')[0]">
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 21 8"><defs /><path fill="#E74C3C" fill-rule="evenodd" d="M19.64 2.92a.92.92 0 110 1.84H3.62L4.85 6a.92.92 0 11-1.3 1.3L.84 4.6a.92.92 0 01-.27-.73.92.92 0 01.27-.71L3.54.44a.92.92 0 011.31 1.3L3.7 2.93h15.95z" clip-rule="evenodd" /></svg>
-<span>
-Start over
-</span>
-</div>
-<span class="js-chain-actions">
-<strong>More actions:</strong>
-<div class="chain" title="More actions:" data-template-converter="<a><span class='icon'></span><span class='text'></span></a>"></div>
-</span>
-</div>
-</div>
-</div>
-</section>
-<section class="error-container hidden">
-<div class="msg-container">
-<a href="/" class="actions btn brand-color">Choose other file</a>
-</div>
-</section>
-</div>
-</div>
+          <div class='job-spinner fixed-item hidden'>
+            <div class='file-item'>
+              <main>
+                <div class='spinner img-spinner'>
+                  <svg width='50' height='42' fill='none' xmlns='http://www.w3.org/2000/svg'>
+                    <path class='brand-color' fill-rule='evenodd' clip-rule='evenodd'
+                      d='M22.2 1.53C22.2.68 22.9 0 23.74 0A21.97 21.97 0 0145.7 21.23l1.7-1.7a1.53 1.53 0 012.16 2.16l-4.48 4.48c-.33.33-.76.48-1.19.45-.43.03-.86-.12-1.19-.45l-4.48-4.48a1.53 1.53 0 012.16-2.16l2.28 2.28A18.92 18.92 0 0023.73 3.05c-.84 0-1.52-.68-1.52-1.52zm5.6 38.25c0 .84-.69 1.53-1.53 1.53A21.97 21.97 0 014.3 20.08l-1.7 1.7a1.53 1.53 0 11-2.16-2.16l4.48-4.49c.33-.32.76-.47 1.19-.44.43-.03.86.12 1.19.44l4.48 4.49a1.53 1.53 0 01-2.16 2.16L7.35 19.5a18.92 18.92 0 0018.92 18.75c.84 0 1.52.68 1.52 1.53z'
+                      fill='#E74C3C' />
+                  </svg>
+                </div>
+              </main>
+              <footer class='file-item-footer'>
+                <div class='file-name'>Uploading...</div>
+              </footer>
+            </div>
+          </div>
+        </div>
+        <div class="sticky-panel download-container hidden">
+          <div class="download-wrapper">
+            <div class="brand-btn-container brand-color">
+              <a class="btn-wrapper download-btn" download href="#">
+                <div class="button-icon">
+                  <svg width="26" height="26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M11.94.97a.97.97 0 011.94 0V17.8l1.3-1.3a.97.97 0 111.37 1.38l-2.85 2.84c-.21.21-.49.3-.76.29a.97.97 0 01-.75-.29l-2.85-2.84a.97.97 0 111.37-1.38l1.23 1.23V.97zm13.08 10.67c.52 0 .95.42.95.94v7.55A5.87 5.87 0 0120.09 26H5.87A5.87 5.87 0 010 20.13v-7.55a.94.94 0 011.89 0v7.55c0 2.2 1.78 3.98 3.98 3.98H20.1c2.2 0 3.99-1.78 3.99-3.98v-7.55c0-.52.42-.94.94-.94z"
+                      fill="#fff" />
+                  </svg>
+                </div>
+                <span class="btn-label">
+                  Download
+                </span>
+              </a>
+            </div>
+            <div class="external-repos">
+              <div class="icon google-icon brand-border-on-hover js-save-to-gdrive-btn disabled"
+                title="Save to Google Drive">
+                <div id="gdrive-btn"></div>
+              </div>
+              <div class="icon dropbox-icon brand-border-on-hover js-save-to-dropbox-btn disabled"
+                title="Save to Dropbox"></div>
+              <div class="icon remove-icon brand-border-on-hover js-remove-btn" title="Remove"></div>
+            </div>
+            <div class="other-actions">
+              <div class="start-over" onclick="location.href = window.location.href.split('#')[0]">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 21 8">
+                  <defs />
+                  <path fill="#E74C3C" fill-rule="evenodd"
+                    d="M19.64 2.92a.92.92 0 110 1.84H3.62L4.85 6a.92.92 0 11-1.3 1.3L.84 4.6a.92.92 0 01-.27-.73.92.92 0 01.27-.71L3.54.44a.92.92 0 011.31 1.3L3.7 2.93h15.95z"
+                    clip-rule="evenodd" />
+                </svg>
+                <span>
+                  Start over
+                </span>
+              </div>
+              <span class="js-chain-actions">
+                <strong>More actions:</strong>
+                <div class="chain" title="More actions:"
+                  data-template-converter="<a><span class='icon'></span><span class='text'></span></a>"></div>
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="error-container hidden">
+        <div class="msg-container">
+          <a href="/" class="actions btn brand-color">Choose other file</a>
+        </div>
+      </section>
+    </div>
+    </div>
 
-<div class="layout-container start-panel border-bottom">
-<div class="content-wrapper">
-<section class="features-container">
-<div class="feature">
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 53 40" width="53" height="40" fill="none">
-<defs />
-<path class="change-color" d="M35.758 6.212c0 5.607-5.292 10.152-11.819 10.152-6.527 0-11.818-4.545-11.818-10.152h23.637z" />
-<path fill="#313131" fill-rule="evenodd" d="M10.152 0c.836 0 1.515.678 1.515 1.515 0 9.098 6.65 16.212 14.545 16.212 7.896 0 14.546-7.114 14.546-16.212a1.515 1.515 0 113.03 0c0 10.483-7.732 19.243-17.576 19.243-9.844 0-17.576-8.76-17.576-19.243C8.636.678 9.315 0 10.152 0z" clip-rule="evenodd" />
-<path fill="#313131" fill-rule="evenodd" d="M8.788 1.515C8.788.678 9.466 0 10.303 0h31.97a1.515 1.515 0 010 3.03h-31.97a1.515 1.515 0 01-1.515-1.515zM16.97 38.485c0 .837.678 1.515 1.515 1.515v-3.03c-.837 0-1.515.678-1.515 1.515zm16.818 0V36.97H18.485V40h15.303v-1.515zm0 0V36.97a1.515 1.515 0 110 3.03v-1.515z" clip-rule="evenodd" />
-<path fill="#313131" fill-rule="evenodd" d="M24.394 36.667v-7.88a1.515 1.515 0 113.03 0v7.88a1.515 1.515 0 01-3.03 0zM46.364 7.273c0-.837.678-1.515 1.515-1.515 2.56 0 4.697 2.034 4.697 4.62 0 2.587-2.138 4.622-4.697 4.622a1.515 1.515 0 010-3.03c.955 0 1.666-.747 1.666-1.591 0-.845-.711-1.591-1.666-1.591a1.515 1.515 0 01-1.515-1.515zM6.212 7.273c0-.837-.678-1.515-1.515-1.515C2.137 5.758 0 7.792 0 10.378 0 12.966 2.138 15 4.697 15a1.515 1.515 0 000-3.03c-.955 0-1.667-.747-1.667-1.591 0-.845.712-1.591 1.667-1.591.837 0 1.515-.678 1.515-1.515z" clip-rule="evenodd" />
-</svg>
-<h3>The Best Free PDF Converter</h3>
-<p>No matter what types of files you need to convert, our online file converter is more than just a PDF file converter. It’s the go-to solution for all of your file conversion needs.</p>
-</div>
-<div class="feature">
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 26 26" width="40" height="40">
-<defs /><path class="change-color" fill-rule="evenodd" d="M16.55 9.4v13.48H6.23V9.41c0-3.2 2.31-5.8 5.16-5.8s5.16 2.6 5.16 5.8z" clip-rule="evenodd" /><path fill="#313131" fill-rule="evenodd" d="M17.82 7.2v16.85H7.99V7.2c0-2.99 2.28-5.25 4.91-5.25 2.63 0 4.92 2.26 4.92 5.25zm1.95 0V26H6.04V7.2C6.04 3.22 9.1 0 12.9 0c3.8 0 6.87 3.22 6.87 7.2zm1.95 15.2a4.09 4.09 0 012.14 3.6h1.95c0-2.65-1.72-4.9-4.1-5.72v2.12zM4.09 20.28v2.12A4.09 4.09 0 001.95 26H0c0-2.65 1.71-4.9 4.09-5.72zM12.9 9.06a1.02 1.02 0 100-2.05 1.02 1.02 0 000 2.05zm1.03 4.23a1.02 1.02 0 11-2.05 0 1.02 1.02 0 012.05 0zm-1.03 6.38a1.02 1.02 0 100-2.04 1.02 1.02 0 000 2.04z" clip-rule="evenodd" />
-</svg>
-<h3>Start a free trial</h3>
-<p>With a free trial of our online PDF converter, you can convert files to and from PDF for free, or sign up for one of our memberships for limitless access to our file converter’s full suite of tools. You also get unlimited file sizes as well as the ability to upload and convert several files to PDF at the same time.</p>
-</div>
-<div class="feature">
-<svg width="35" height="40" viewBox="0 0 24 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M0.602325 14.6564H9.47491C14.9978 14.6564 19.4749 19.1335 19.4749 24.6564V24.8958H0.602325V14.6564Z" class="change-color" />
-<path fill-rule="evenodd" clip-rule="evenodd" d="M11.5946 2.00772C8.24037 2.00772 5.52124 4.72686 5.52124 8.08108C5.52124 8.6355 5.07179 9.08494 4.51737 9.08494C3.96296 9.08494 3.51351 8.6355 3.51351 8.08108C3.51351 3.61802 7.13154 0 11.5946 0C16.0577 0 19.6757 3.61802 19.6757 8.08108C19.6757 8.6355 19.2262 9.08494 18.6718 9.08494C18.1174 9.08494 17.668 8.6355 17.668 8.08108C17.668 4.72686 14.9488 2.00772 11.5946 2.00772ZM20.0772 13.0502H3.01158C2.45717 13.0502 2.00772 13.4996 2.00772 14.0541V22.9884C2.00772 23.5428 2.45717 23.9923 3.01158 23.9923H20.0772C20.6316 23.9923 21.0811 23.5428 21.0811 22.9884V14.0541C21.0811 13.4996 20.6316 13.0502 20.0772 13.0502ZM3.01158 11.0425C1.34833 11.0425 0 12.3908 0 14.0541V22.9884C0 24.6517 1.34833 26 3.01158 26H20.0772C21.7405 26 23.0888 24.6517 23.0888 22.9884V14.0541C23.0888 12.3908 21.7405 11.0425 20.0772 11.0425H3.01158ZM12.749 18.5714C12.749 19.2367 12.2097 19.7761 11.5444 19.7761C10.8791 19.7761 10.3398 19.2367 10.3398 18.5714C10.3398 17.9061 10.8791 17.3668 11.5444 17.3668C12.2097 17.3668 12.749 17.9061 12.749 18.5714ZM14.7568 18.5714C14.7568 20.3456 13.3185 21.7838 11.5444 21.7838C9.77027 21.7838 8.33205 20.3456 8.33205 18.5714C8.33205 16.7973 9.77027 15.3591 11.5444 15.3591C13.3185 15.3591 14.7568 16.7973 14.7568 18.5714Z" fill="#313131" />
-</svg>
-<h3>Encrypted files</h3>
-<p>We care about the privacy of your data. 256-bit SSL Encryption of all your files means that your files, documents, and data are secure. We also won’t give or share any of your data with other parties.</p>
-</div>
-<div class="feature">
-<svg width="39" height="36" viewBox="0 0 39 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M17.2038 1.5395C18.0715 -0.475409 20.9283 -0.475405 21.796 1.5395L25.7977 10.8318L35.8719 11.7662C38.0563 11.9688 38.9391 14.6858 37.291 16.1337L29.69 22.811L31.9145 32.6808C32.3968 34.8209 30.0856 36.5001 28.1992 35.3801L19.4999 30.2146L10.8006 35.3801C8.91425 36.5001 6.60301 34.8209 7.08536 32.6808L9.30981 22.811L1.70887 16.1337C0.0607143 14.6858 0.943533 11.9688 3.12796 11.7662L13.2021 10.8318L17.2038 1.5395ZM19.4999 3.79245L15.84 12.2911C15.4781 13.1315 14.6859 13.7071 13.7748 13.7916L4.5611 14.6461L11.5128 20.7531C12.2003 21.3571 12.5029 22.2883 12.3017 23.181L10.2672 32.2078L18.2235 27.4835C19.0103 27.0163 19.9895 27.0163 20.7763 27.4835L28.7326 32.2078L26.6981 23.181C26.497 22.2883 26.7995 21.3571 27.487 20.7531L34.4387 14.6461L25.2251 13.7916C24.3139 13.7071 23.5217 13.1315 23.1598 12.2911L19.4999 3.79245Z" fill="#313131" />
-<path class="change-color" d="M19.5 9.00006L21.9687 16.1022L29.4861 16.2554L23.4944 20.7979L25.6718 27.9947L19.5 23.7001L13.3283 27.9947L15.5056 20.7979L9.51392 16.2554L17.0313 16.1022L19.5 9.00006Z" fill="#FEE7E5" />
-</svg>
-<h3>Automatic deletion of your files</h3>
-<p>After you convert a document to PDF, you’ll be able to download and delete your files from our servers. If you happen to forget about deleting your files, they will be deleted from our server automatically after three hours to ensure your information is secure.</p>
-</div>
-<div class="feature">
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 28 26" width="42" height="40">
-<defs /><rect width="21.95" height="13.64" x="1.58" y="3.86" class="change-color" rx="6.82" /><path fill="#313131" fill-rule="evenodd" d="M24.32 1.98H2.97a.99.99 0 00-1 .99v13.05c0 .54.45.98 1 .98h21.35c.55 0 .99-.44.99-.98V2.97a.99.99 0 00-1-1zM2.97 0A2.97 2.97 0 000 2.97v13.05a2.97 2.97 0 002.97 2.96h21.35a2.97 2.97 0 002.97-2.96V2.97A2.97 2.97 0 0024.32 0H2.97zM7.7 25.01c0-.54.44-.99.99-.99h10.08a.99.99 0 110 1.98H8.7a.99.99 0 01-.99-.99zM10.87 9.5a2.77 2.77 0 015.5-.46.99.99 0 00-.33 1.9l1.91.8a.99.99 0 001.3-.53l.8-1.91a.99.99 0 00-1.78-.85 4.75 4.75 0 10-4.63 5.8.99.99 0 100-1.98 2.77 2.77 0 01-2.77-2.77z" clip-rule="evenodd" />
-</svg>
-<h3>Universal conversion</h3>
-<p>Our free file converter works on any OS, including Windows, Mac, and Linux. Because of this, you can convert files to PDF from any OS or device as long as you have an Internet connection.</p>
-</div>
-<div class="feature">
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 26 24" width="44" height="40">
-<defs /><path class="change-color" d="M17.95 2.23l4.5 4.5-1.8 1.8-4.5-4.5z" /><path fill="#313131" fill-rule="evenodd" d="M18.4 2.56L16.67 4.3l5.04 5.04 1.73-1.73-5.04-5.04zm.75-2.25a1.06 1.06 0 00-1.5 0l-3.23 3.23a1.06 1.06 0 000 1.5l2.55 2.56L12.56 12 6.98 6.43a4.25 4.25 0 00-.66-5.16 1.06 1.06 0 10-1.5 1.5 2.12 2.12 0 01-3 3 1.06 1.06 0 10-1.5 1.5 4.25 4.25 0 005.15.66l5.59 5.59-8.4 8.4a1.06 1.06 0 001.5 1.5l8.4-8.4 8.33 8.33a1.06 1.06 0 101.5-1.5l-8.33-8.33 4.42-4.42 2.48 2.48c.41.41 1.08.41 1.5 0l3.23-3.23c.41-.42.41-1.09 0-1.5L19.15.3z" clip-rule="evenodd" />
-</svg>
-<h3>A suite of helpful file conversion tools</h3>
-<p>Our PDF file converter does more than convert files to PDF. From compression and rotation to merging two different PDFs and splitting one PDF into two, you can easily edit your PDF files with our suite of tools in the blink of an eye.</p>
-</div>
-</section>
-</div>
-</main>
+    <div class="layout-container start-panel border-bottom">
+      <div class="content-wrapper">
+        <section class="features-container">
+          <div class="feature">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 53 40" width="53" height="40" fill="none">
+              <defs />
+              <path class="change-color"
+                d="M35.758 6.212c0 5.607-5.292 10.152-11.819 10.152-6.527 0-11.818-4.545-11.818-10.152h23.637z" />
+              <path fill="#313131" fill-rule="evenodd"
+                d="M10.152 0c.836 0 1.515.678 1.515 1.515 0 9.098 6.65 16.212 14.545 16.212 7.896 0 14.546-7.114 14.546-16.212a1.515 1.515 0 113.03 0c0 10.483-7.732 19.243-17.576 19.243-9.844 0-17.576-8.76-17.576-19.243C8.636.678 9.315 0 10.152 0z"
+                clip-rule="evenodd" />
+              <path fill="#313131" fill-rule="evenodd"
+                d="M8.788 1.515C8.788.678 9.466 0 10.303 0h31.97a1.515 1.515 0 010 3.03h-31.97a1.515 1.515 0 01-1.515-1.515zM16.97 38.485c0 .837.678 1.515 1.515 1.515v-3.03c-.837 0-1.515.678-1.515 1.515zm16.818 0V36.97H18.485V40h15.303v-1.515zm0 0V36.97a1.515 1.515 0 110 3.03v-1.515z"
+                clip-rule="evenodd" />
+              <path fill="#313131" fill-rule="evenodd"
+                d="M24.394 36.667v-7.88a1.515 1.515 0 113.03 0v7.88a1.515 1.515 0 01-3.03 0zM46.364 7.273c0-.837.678-1.515 1.515-1.515 2.56 0 4.697 2.034 4.697 4.62 0 2.587-2.138 4.622-4.697 4.622a1.515 1.515 0 010-3.03c.955 0 1.666-.747 1.666-1.591 0-.845-.711-1.591-1.666-1.591a1.515 1.515 0 01-1.515-1.515zM6.212 7.273c0-.837-.678-1.515-1.515-1.515C2.137 5.758 0 7.792 0 10.378 0 12.966 2.138 15 4.697 15a1.515 1.515 0 000-3.03c-.955 0-1.667-.747-1.667-1.591 0-.845.712-1.591 1.667-1.591.837 0 1.515-.678 1.515-1.515z"
+                clip-rule="evenodd" />
+            </svg>
+            <h3>The Best Free PDF Converter</h3>
+            <p>No matter what types of files you need to convert, our online file converter is more than just a PDF file
+              converter. It’s the go-to solution for all of your file conversion needs.</p>
+          </div>
+          <div class="feature">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 26 26" width="40" height="40">
+              <defs />
+              <path class="change-color" fill-rule="evenodd"
+                d="M16.55 9.4v13.48H6.23V9.41c0-3.2 2.31-5.8 5.16-5.8s5.16 2.6 5.16 5.8z" clip-rule="evenodd" />
+              <path fill="#313131" fill-rule="evenodd"
+                d="M17.82 7.2v16.85H7.99V7.2c0-2.99 2.28-5.25 4.91-5.25 2.63 0 4.92 2.26 4.92 5.25zm1.95 0V26H6.04V7.2C6.04 3.22 9.1 0 12.9 0c3.8 0 6.87 3.22 6.87 7.2zm1.95 15.2a4.09 4.09 0 012.14 3.6h1.95c0-2.65-1.72-4.9-4.1-5.72v2.12zM4.09 20.28v2.12A4.09 4.09 0 001.95 26H0c0-2.65 1.71-4.9 4.09-5.72zM12.9 9.06a1.02 1.02 0 100-2.05 1.02 1.02 0 000 2.05zm1.03 4.23a1.02 1.02 0 11-2.05 0 1.02 1.02 0 012.05 0zm-1.03 6.38a1.02 1.02 0 100-2.04 1.02 1.02 0 000 2.04z"
+                clip-rule="evenodd" />
+            </svg>
+            <h3>Start a free trial</h3>
+            <p>With a free trial of our online PDF converter, you can convert files to and from PDF for free, or sign up
+              for one of our memberships for limitless access to our file converter’s full suite of tools. You also get
+              unlimited file sizes as well as the ability to upload and convert several files to PDF at the same time.
+            </p>
+          </div>
+          <div class="feature">
+            <svg width="35" height="40" viewBox="0 0 24 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M0.602325 14.6564H9.47491C14.9978 14.6564 19.4749 19.1335 19.4749 24.6564V24.8958H0.602325V14.6564Z"
+                class="change-color" />
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M11.5946 2.00772C8.24037 2.00772 5.52124 4.72686 5.52124 8.08108C5.52124 8.6355 5.07179 9.08494 4.51737 9.08494C3.96296 9.08494 3.51351 8.6355 3.51351 8.08108C3.51351 3.61802 7.13154 0 11.5946 0C16.0577 0 19.6757 3.61802 19.6757 8.08108C19.6757 8.6355 19.2262 9.08494 18.6718 9.08494C18.1174 9.08494 17.668 8.6355 17.668 8.08108C17.668 4.72686 14.9488 2.00772 11.5946 2.00772ZM20.0772 13.0502H3.01158C2.45717 13.0502 2.00772 13.4996 2.00772 14.0541V22.9884C2.00772 23.5428 2.45717 23.9923 3.01158 23.9923H20.0772C20.6316 23.9923 21.0811 23.5428 21.0811 22.9884V14.0541C21.0811 13.4996 20.6316 13.0502 20.0772 13.0502ZM3.01158 11.0425C1.34833 11.0425 0 12.3908 0 14.0541V22.9884C0 24.6517 1.34833 26 3.01158 26H20.0772C21.7405 26 23.0888 24.6517 23.0888 22.9884V14.0541C23.0888 12.3908 21.7405 11.0425 20.0772 11.0425H3.01158ZM12.749 18.5714C12.749 19.2367 12.2097 19.7761 11.5444 19.7761C10.8791 19.7761 10.3398 19.2367 10.3398 18.5714C10.3398 17.9061 10.8791 17.3668 11.5444 17.3668C12.2097 17.3668 12.749 17.9061 12.749 18.5714ZM14.7568 18.5714C14.7568 20.3456 13.3185 21.7838 11.5444 21.7838C9.77027 21.7838 8.33205 20.3456 8.33205 18.5714C8.33205 16.7973 9.77027 15.3591 11.5444 15.3591C13.3185 15.3591 14.7568 16.7973 14.7568 18.5714Z"
+                fill="#313131" />
+            </svg>
+            <h3>Encrypted files</h3>
+            <p>We care about the privacy of your data. 256-bit SSL Encryption of all your files means that your files,
+              documents, and data are secure. We also won’t give or share any of your data with other parties.</p>
+          </div>
+          <div class="feature">
+            <svg width="39" height="36" viewBox="0 0 39 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M17.2038 1.5395C18.0715 -0.475409 20.9283 -0.475405 21.796 1.5395L25.7977 10.8318L35.8719 11.7662C38.0563 11.9688 38.9391 14.6858 37.291 16.1337L29.69 22.811L31.9145 32.6808C32.3968 34.8209 30.0856 36.5001 28.1992 35.3801L19.4999 30.2146L10.8006 35.3801C8.91425 36.5001 6.60301 34.8209 7.08536 32.6808L9.30981 22.811L1.70887 16.1337C0.0607143 14.6858 0.943533 11.9688 3.12796 11.7662L13.2021 10.8318L17.2038 1.5395ZM19.4999 3.79245L15.84 12.2911C15.4781 13.1315 14.6859 13.7071 13.7748 13.7916L4.5611 14.6461L11.5128 20.7531C12.2003 21.3571 12.5029 22.2883 12.3017 23.181L10.2672 32.2078L18.2235 27.4835C19.0103 27.0163 19.9895 27.0163 20.7763 27.4835L28.7326 32.2078L26.6981 23.181C26.497 22.2883 26.7995 21.3571 27.487 20.7531L34.4387 14.6461L25.2251 13.7916C24.3139 13.7071 23.5217 13.1315 23.1598 12.2911L19.4999 3.79245Z"
+                fill="#313131" />
+              <path class="change-color"
+                d="M19.5 9.00006L21.9687 16.1022L29.4861 16.2554L23.4944 20.7979L25.6718 27.9947L19.5 23.7001L13.3283 27.9947L15.5056 20.7979L9.51392 16.2554L17.0313 16.1022L19.5 9.00006Z"
+                fill="#FEE7E5" />
+            </svg>
+            <h3>Automatic deletion of your files</h3>
+            <p>After you convert a document to PDF, you’ll be able to download and delete your files from our servers.
+              If you happen to forget about deleting your files, they will be deleted from our server automatically
+              after three hours to ensure your information is secure.</p>
+          </div>
+          <div class="feature">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 28 26" width="42" height="40">
+              <defs />
+              <rect width="21.95" height="13.64" x="1.58" y="3.86" class="change-color" rx="6.82" />
+              <path fill="#313131" fill-rule="evenodd"
+                d="M24.32 1.98H2.97a.99.99 0 00-1 .99v13.05c0 .54.45.98 1 .98h21.35c.55 0 .99-.44.99-.98V2.97a.99.99 0 00-1-1zM2.97 0A2.97 2.97 0 000 2.97v13.05a2.97 2.97 0 002.97 2.96h21.35a2.97 2.97 0 002.97-2.96V2.97A2.97 2.97 0 0024.32 0H2.97zM7.7 25.01c0-.54.44-.99.99-.99h10.08a.99.99 0 110 1.98H8.7a.99.99 0 01-.99-.99zM10.87 9.5a2.77 2.77 0 015.5-.46.99.99 0 00-.33 1.9l1.91.8a.99.99 0 001.3-.53l.8-1.91a.99.99 0 00-1.78-.85 4.75 4.75 0 10-4.63 5.8.99.99 0 100-1.98 2.77 2.77 0 01-2.77-2.77z"
+                clip-rule="evenodd" />
+            </svg>
+            <h3>Universal conversion</h3>
+            <p>Our free file converter works on any OS, including Windows, Mac, and Linux. Because of this, you can
+              convert files to PDF from any OS or device as long as you have an Internet connection.</p>
+          </div>
+          <div class="feature">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 26 24" width="44" height="40">
+              <defs />
+              <path class="change-color" d="M17.95 2.23l4.5 4.5-1.8 1.8-4.5-4.5z" />
+              <path fill="#313131" fill-rule="evenodd"
+                d="M18.4 2.56L16.67 4.3l5.04 5.04 1.73-1.73-5.04-5.04zm.75-2.25a1.06 1.06 0 00-1.5 0l-3.23 3.23a1.06 1.06 0 000 1.5l2.55 2.56L12.56 12 6.98 6.43a4.25 4.25 0 00-.66-5.16 1.06 1.06 0 10-1.5 1.5 2.12 2.12 0 01-3 3 1.06 1.06 0 10-1.5 1.5 4.25 4.25 0 005.15.66l5.59 5.59-8.4 8.4a1.06 1.06 0 001.5 1.5l8.4-8.4 8.33 8.33a1.06 1.06 0 101.5-1.5l-8.33-8.33 4.42-4.42 2.48 2.48c.41.41 1.08.41 1.5 0l3.23-3.23c.41-.42.41-1.09 0-1.5L19.15.3z"
+                clip-rule="evenodd" />
+            </svg>
+            <h3>A suite of helpful file conversion tools</h3>
+            <p>Our PDF file converter does more than convert files to PDF. From compression and rotation to merging two
+              different PDFs and splitting one PDF into two, you can easily edit your PDF files with our suite of tools
+              in the blink of an eye.</p>
+          </div>
+        </section>
+      </div>
+  </main>
 
-<footer>
+  <footer>
 
-<div class="footer-bottom">
-<div class="layout-container">
-<div class="content-wrapper">
-<div class="copyright">
-&#xA9; 2022 EZnote
-</div>
-</div>
-</div>
-</div>
-</footer>
+    <div class="footer-bottom">
+      <div class="layout-container">
+        <div class="content-wrapper">
+          <div class="copyright">
+            &#xA9; 2022 EZnote
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
 
 </body>
 
