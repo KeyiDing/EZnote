@@ -1,0 +1,29 @@
+<!doctype html>
+<body>
+<title> EZnote Interaction Trial</title>
+<h2> Select a file to upload</h2>
+
+{%  if filename %}
+<div>
+	<a href="{{ url_for('uploads', filename = filename)}}"></a>
+</div>
+{% endif %}
+
+<form method = "post" action="/home" >
+	<p>
+		<input type = "file" name = "file" autocomplete="off" required>
+	</p>
+	<p>
+		<input type = "submit" value = "Submit" onclick='myfunction_clickevent()'>
+	</p>
+</form>
+</body>
+
+<script>
+	function myfunction_onload(){
+        $.ajax({
+            url: "run.py",
+             context: document.body
+            })
+        }
+</script>
