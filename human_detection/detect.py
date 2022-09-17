@@ -3,6 +3,8 @@ import cv2
 import numpy
 import tensorflow as tf
 import pandas as pd
+import numpy as np
+import imutils
 
 # Carregar modelos
 detector = hub.load("https://tfhub.dev/tensorflow/efficientdet/lite2/detection/1")
@@ -17,7 +19,7 @@ labels = labels['OBJECT (2017 REL.)']
 
 def detect(frame):
     #Resize to respect the input_shape
-    inp = cv2.resize(frame, (512 , 512 ))
+    inp = imutils.resize(frame, height=512)
     inp = frame
     
     # cv2.imwrite("frame.png", frame)
@@ -45,6 +47,8 @@ def detect(frame):
     for score, (ymin,xmin,ymax,xmax), label in zip(pred_scores, pred_boxes, pred_labels):
         if score < 0.5:
             continue          
-        img_boxes = cv2.rectangle(rgb,(xmin, ymax),(xmax, ymin),(0,255,0),1) 
+        points = np.array([[xmin,ymin],[xmax,ymin],[xmax,ymax],[xmin,ymax]])
+        img_boxes = cv2.fillPoly(frame, pts = [points], color =(np.nan,np.nan,np.nan))
+        img_boxes  = imutils.resize(img_boxes, height=720)
   
-    return frame,img_boxes
+    return img_boxes

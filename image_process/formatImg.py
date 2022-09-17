@@ -91,7 +91,9 @@ def ImgtoNote(img):
 def findcoordinates(image):
     # load the image and compute the ratio of the old height
     # to the new height, clone it, and resize it
+    print(image.shape)
     ratio = image.shape[0] / 500.0
+    print("ratio = ", ratio)
     image = imutils.resize(image, height=500)
     # convert the image to grayscale, blur it, and find edges
     # in the image
@@ -100,10 +102,10 @@ def findcoordinates(image):
     edged = cv2.Canny(gray, 50, 200)
     # show the original image and the edge detected image
     print("STEP 1: Edge Detection")
-    cv2.imshow("Image", image)
-    cv2.imshow("Edged", edged)
-    cv2.waitKey(0)
-    cv2.destroyAllWindows()
+    # cv2.imshow("Image", image)
+    # cv2.imshow("Edged", edged)
+    # cv2.waitKey(0)
+    # cv2.destroyAllWindows()
 
     # find the contours in the edged image, keeping only the
     # largest ones, and initialize the screen contour
@@ -119,11 +121,11 @@ def findcoordinates(image):
         # can assume that we have found our screen
         if len(approx) == 4:
             screenCnt = approx
-            cv2.drawContours(image, [screenCnt], -1, (0, 255, 0), 2)
-            cv2.imshow("Outline", image)
-            cv2.waitKey(0)
-            cv2.destroyAllWindows()
-            return screenCnt.reshape(4, 2) * ratio
+            # cv2.drawContours(image, [screenCnt], -1, (0, 255, 0), 2)
+            # cv2.imshow("Outline", image)
+            # cv2.waitKey(0)
+            # cv2.destroyAllWindows()
+            return screenCnt * ratio
     # show the contour (outline) of the piece of paper
     print("STEP 2: Find contours of paper")
     return -1
