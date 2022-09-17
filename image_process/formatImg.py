@@ -97,9 +97,13 @@ def findcoordinates(image):
     # in the image
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     gray = cv2.GaussianBlur(gray, (5, 5), 0)
-    edged = cv2.Canny(gray, 75, 200)
+    edged = cv2.Canny(gray, 50, 200)
     # show the original image and the edge detected image
     print("STEP 1: Edge Detection")
+    cv2.imshow("Image", image)
+    cv2.imshow("Edged", edged)
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
 
     # find the contours in the edged image, keeping only the
     # largest ones, and initialize the screen contour
