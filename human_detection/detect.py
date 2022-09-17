@@ -6,20 +6,21 @@ import pandas as pd
 
 # Carregar modelos
 detector = hub.load("https://tfhub.dev/tensorflow/efficientdet/lite2/detection/1")
-labels = pd.read_csv('labels.csv',sep=';',index_col='ID')
+labels = pd.read_csv('./human_detection/labels.csv',sep=';',index_col='ID')
 labels = labels['OBJECT (2017 REL.)']
 
-cap = cv2.VideoCapture(0)
 
-width = 512
-height = 512
+# live camera
+# cap = cv2.VideoCapture(0)
 
-while(True):
-    #Capture frame-by-frame
-    ret, frame = cap.read()
-    
+# video IO
+
+def detect(frame):
     #Resize to respect the input_shape
-    inp = cv2.resize(frame, (width , height ))
+    inp = cv2.resize(frame, (512 , 512 ))
+    inp = frame
+    
+    # cv2.imwrite("frame.png", frame)
 
     #Convert img to RGB
     rgb = cv2.cvtColor(inp, cv2.COLOR_BGR2RGB)
@@ -43,22 +44,7 @@ while(True):
     
     for score, (ymin,xmin,ymax,xmax), label in zip(pred_scores, pred_boxes, pred_labels):
         if score < 0.5:
-            continue
-            
-        score_txt = f'{100 * round(score,0)}'
-        img_boxes = cv2.rectangle(rgb,(xmin, ymax),(xmax, ymin),(0,255,0),1)      
-        font = cv2.FONT_HERSHEY_SIMPLEX
-        cv2.putText(img_boxes,label,(xmin, ymax-10), font, 0.5, (255,0,0), 1, cv2.LINE_AA)
-        cv2.putText(img_boxes,score_txt,(xmax, ymax-10), font, 0.5, (255,0,0), 1, cv2.LINE_AA)
-
-    if len(img_boxes) == 0:
-        continue
-    
-    #Display the resulting frame
-    cv2.imshow('Result',img_boxes)
-    if cv2.waitKey(1) & 0xFF == ord('q'):
-        break
-
-# When everything done, release the capture
-cap.release()
-cv2.destroyAllWindows()
+            continue          
+        img_boxes = cv2.rectangle(rgb,(xmin, ymax),(xmax, ymin),(0,255,0),1) 
+  
+    return frame,img_boxes
