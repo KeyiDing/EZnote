@@ -8,7 +8,7 @@ import imutils
 
 # Carregar modelos
 detector = hub.load("https://tfhub.dev/tensorflow/efficientdet/lite2/detection/1")
-labels = pd.read_csv('./human_detection/labels.csv',sep=';',index_col='ID')
+labels = pd.read_csv('~/EZnote/human_detection/labels.csv',sep=';',index_col='ID')
 labels = labels['OBJECT (2017 REL.)']
 
 # video IO
