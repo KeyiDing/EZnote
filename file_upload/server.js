@@ -1,9 +1,11 @@
+const PythonShell = require('python-shell');
 const path = require("path");
 const Koa = require("koa");
 const serve = require("koa-static");
 const Router = require("@koa/router");
 const multer = require("@koa/multer");
 const cors = require("@koa/cors");
+var scriptpath = path.resolve('../');
 
 const app = new Koa();
 const router = new Router();
@@ -26,13 +28,24 @@ router.get("/", async (ctx) => {
   ctx.body = "Hello friends!";
 });
 
+
 // add a route for uploading single files
 router.post("/upload-single-file", upload.single("file"), (ctx) => {
-  ctx.body = {
+
+  var options = {
+    scriptPath: scriptpath,
+    args: []
+  }
+  PythonShell.run('main.py', options, function (err) {
+    if (err) throw err;
+    ctx.body = {
     message: `file ${ctx.request.file.filename} has saved on the server`,
     url: `http://localhost:${PORT}/${ctx.request.file.originalname}`,
-  };
+    };
+  });
 });
+
+
 
 app.use(cors());
 app.use(router.routes()).use(router.allowedMethods());
