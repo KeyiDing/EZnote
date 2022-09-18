@@ -59,7 +59,8 @@ def note(video_path):
                 
         if count % 100 == 0:  
             if count / 100 == 1:  
-                new_cor = cor.reshape((4,2))
+                new_cor = np.copy(cor)
+                new_cor = new_cor.reshape((4,2))
                 new_cor[:,0] -= x_min
                 new_cor[:,1] -= y_min
             note_img = ImgtoNote(final, new_cor)
