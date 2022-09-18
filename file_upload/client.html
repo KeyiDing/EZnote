@@ -17,13 +17,9 @@
   <link rel="manifest" href="/Favicons/manifest.json">
   <link rel="stylesheet" href="main.css" type="text/css" />
   <script src=" https://unpkg.com/axios@0.24.0/dist/axios.min.js"></script>
-
-  <script async defer id="gapi" src="https://apis.google.com/js/platform.js"></script>
 </head>
 
 <body>
-
-
   <div class="global-progress brand-color"></div>
   <header class="layout-header">
     <nav class="layout-header-nav">
@@ -35,7 +31,8 @@
         </a>
       </div>
       <div class="page-title">
-        <h1><span class="converter-icon"></span><span class="main-title js-main-title">Online Automated Note-Taking Tool</span></h1>
+        <h1><span class="converter-icon"></span><span class="main-title js-main-title">Online Automated Note-Taking
+            Tool</span></h1>
       </div>
       <div class="header-links">
         <div class="user-menu">
@@ -77,13 +74,16 @@
               <input type="file" id="fileInput">
               Select your lecture video
             </label>
-            <button class="button" id="uploadButton">upload</button>
+            <button class="button" type="button" id="uploadButton">upload</button>
+            
           </div>
-
-
+          <p id="p1"></p>
+          <p id="p2"></p>
+          
           <script>
 
-            document.getElementById("uploadButton").onclick = () => {
+            document.getElementById("uploadButton").onclick = (event) => {
+              event.preventDefault();
               let fileElement = document.getElementById('fileInput')
 
               // check if user had selected a file
@@ -102,13 +102,18 @@
                   const percentCompleted = Math.round(
                     (progressEvent.loaded * 100) / progressEvent.total
                   );
-                  console.log(`upload process: ${percentCompleted}%`);
+                  document.getElementById("p").innerHTML = `Upload Progress: ${percentCompleted}%`
+                  if (percentCompleted === 100) {
+                    document.getElementById("p").innerHTML = "Server Processing...";
+                  }
                 }
               })
                 .then(res => {
-                  console.log(res.data)
+                  // console.log(res.data)
                   console.log(res.data.url)
-                  window.location.href = "public/loadingPage.html";
+                  document.getElementById("p1").innerHTML = "Processing completed! Please download your notes:";
+                  document.getElementById("p2").innerHTML = res.data.url;
+                  // window.location.href = "public/loadingPage.html";
                 })
             }
 
@@ -139,7 +144,8 @@
                 <li class="howto-column" itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
                   <meta itemprop="position" content="3" />
                   <span itemprop="text">
-                    Your note will be availble for download immediately. The processing time varies depending on the length of your lecture.
+                    Your note will be availble for download immediately. The processing time varies depending on the
+                    length of your lecture.
                   </span>
                 </li>
               </ol>

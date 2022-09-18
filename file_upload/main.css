@@ -32,6 +32,18 @@ input[type="file"] {
   height: 200px;
 }
 
+#p1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#p2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .l-pdf-converter .layout-header h1 span.converter-icon {
   background-image: url(data:image/svg+xml;charset=UTF-8;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPSczMCcgaGVpZ2h0PSczMCcgZmlsbD0nbm9uZSc+PGRlZnMvPjxwYXRoIGZpbGw9JyNFNzRDM0MnIGQ9J00wIDZhNiA2IDAgMDE2LTZoMThhNiA2IDAgMDE2IDZ2MThhNiA2IDAgMDEtNiA2SDZhNiA2IDAgMDEtNi02VjZ6Jy8+PHBhdGggZmlsbD0nI2ZmZicgZmlsbC1ydWxlPSdldmVub2RkJyBkPSdNOCA5LjczQTIuNyAyLjcgMCAwMTEwLjY4IDdoNy42N2EyLjcgMi43IDAgMDEyLjY4IDIuNzN2Ny40MmwtMi4zLTIuMzVWOS43M2EuMzkuMzkgMCAwMC0uMzgtLjM5aC03LjY3YS4zOS4zOSAwIDAwLS4zOC40djEwLjUzYzAgLjIxLjE3LjM5LjM4LjM5aDcuNjdjLjIxIDAgLjM4LS4xOC4zOC0uNHYtMS44NWw0LjUgNC41OUgxMC42OUEyLjcgMi43IDAgMDE4IDIwLjI3VjkuNzN6JyBjbGlwLXJ1bGU9J2V2ZW5vZGQnLz48L3N2Zz4=)
 }
