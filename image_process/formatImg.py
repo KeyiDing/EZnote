@@ -15,7 +15,6 @@ def ImgtoNote(img):
 
     # detected corners on the original image
     p = order_points(findcoordinates(img))
-    print(p)
 
     # widths and heights of the projected image
     w1 = scipy.spatial.distance.euclidean(p[0], p[1])
@@ -91,9 +90,7 @@ def ImgtoNote(img):
 def findcoordinates(image):
     # load the image and compute the ratio of the old height
     # to the new height, clone it, and resize it
-    print(image.shape)
     ratio = image.shape[0] / 500.0
-    print("ratio = ", ratio)
     image = imutils.resize(image, height=500)
     # convert the image to grayscale, blur it, and find edges
     # in the image
@@ -128,7 +125,7 @@ def findcoordinates(image):
             return screenCnt * ratio
     # show the contour (outline) of the piece of paper
     print("STEP 2: Find contours of paper")
-    return -1
+    return []
 
 
 def order_points(pts):
