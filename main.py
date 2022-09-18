@@ -6,14 +6,10 @@ import sys
 import os
 from fpdf import FPDF
 
-from image_process.formatImg import ImgtoNote
-
-sys.path.append("./human_detection/")
-import detect
-
 sys.path.append("./image_process/")
-import formatImg
-
+sys.path.append("./human_detection/")
+from image_process import formatImg
+from human_detection import detect
 
 def note(video_path):
     # cap = cv2.VideoCapture("Movie on 2022-9-17 at 2.19 PM.mov")
@@ -65,7 +61,7 @@ def note(video_path):
                 new_cor = new_cor.reshape((4, 2))
                 new_cor[:, 0] -= x_min
                 new_cor[:, 1] -= y_min
-            note_img = ImgtoNote(final, new_cor)
+            note_img = formatImg.ImgtoNote(final, new_cor)
             # cv2.imshow("Result",note_img)
 
             cv2.imwrite("./notes/note_{}.png".format(int(count / 300)), note_img)
@@ -86,7 +82,7 @@ if __name__ == '__main__':
     for filename in sorted(os.listdir("notes")):
         if not filename.startswith('.'):
             pdf.add_page()
-            path = "notes/"+filename
+            path = "notes/" + filename
             print(path)
             pdf.image(path)
     pdf.output("notes.pdf", "F")
