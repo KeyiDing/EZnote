@@ -75,11 +75,13 @@
               Select your lecture video
             </label>
             <button class="button" type="button" id="uploadButton">upload</button>
-            
+
           </div>
-          <p id="p1"></p>
-          <p id="p2"></p>
-          
+          <p id="p1"></p>=
+          <a style="visibility: hidden" id="p2" href="client.html" download>
+            <img src="images/pdf.png" alt="PDF" width="52" height="52">
+          </a>
+
           <script>
 
             document.getElementById("uploadButton").onclick = (event) => {
@@ -109,11 +111,9 @@
                 }
               })
                 .then(res => {
-                  // console.log(res.data)
-                  console.log(res.data.url)
                   document.getElementById("p1").innerHTML = "Processing completed! Please download your notes:";
-                  document.getElementById("p2").innerHTML = res.data.url;
-                  // window.location.href = "public/loadingPage.html";
+                  document.getElementById("p2").href = res.data.url;
+                  document.getElementById("p2").style.visibility = "visible";
                 })
             }
 
@@ -174,7 +174,9 @@
                 clip-rule="evenodd" />
             </svg>
             <h3>Computer Vision & Machine Learning Solution</h3>
-            <p> EZNote uses Computer Vision and Machine Learning to recognize the writing board and the teacher in the lecture video. We use opencv for image processing and TensorFlow for human recognition. The application backend is built with Node.js and the frontend is built with JavaScript, HTML, and CSS.</p>
+            <p> EZNote uses Computer Vision and Machine Learning to recognize the writing board and the teacher in the
+              lecture video. We use opencv for image processing and TensorFlow for human recognition. The application
+              backend is built with Node.js and the frontend is built with JavaScript, HTML, and CSS.</p>
           </div>
           <div class="feature">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 26 26" width="40" height="40">
@@ -186,20 +188,25 @@
                 clip-rule="evenodd" />
             </svg>
             <h3>Completely Free</h3>
-            <p>With the aim to facilitate efficient learning for all, EZnote is a non-profit and thus completely free application accessible to all.
+            <p>With the aim to facilitate efficient learning for all, EZnote is a non-profit and thus completely free
+              application accessible to all.
             </p>
           </div>
           <div class="feature">
-            <img style="vertical-align:middle" width="40" height="45" viewBox="0 0 24 26" fill="none" src="images/wheel.png">
-              <path
-                d="M0.602325 14.6564H9.47491C14.9978 14.6564 19.4749 19.1335 19.4749 24.6564V24.8958H0.602325V14.6564Z"
-                class="change-color" />
-              <path fill-rule="evenodd" clip-rule="evenodd"
-                d="M11.5946 2.00772C8.24037 2.00772 5.52124 4.72686 5.52124 8.08108C5.52124 8.6355 5.07179 9.08494 4.51737 9.08494C3.96296 9.08494 3.51351 8.6355 3.51351 8.08108C3.51351 3.61802 7.13154 0 11.5946 0C16.0577 0 19.6757 3.61802 19.6757 8.08108C19.6757 8.6355 19.2262 9.08494 18.6718 9.08494C18.1174 9.08494 17.668 8.6355 17.668 8.08108C17.668 4.72686 14.9488 2.00772 11.5946 2.00772ZM20.0772 13.0502H3.01158C2.45717 13.0502 2.00772 13.4996 2.00772 14.0541V22.9884C2.00772 23.5428 2.45717 23.9923 3.01158 23.9923H20.0772C20.6316 23.9923 21.0811 23.5428 21.0811 22.9884V14.0541C21.0811 13.4996 20.6316 13.0502 20.0772 13.0502ZM3.01158 11.0425C1.34833 11.0425 0 12.3908 0 14.0541V22.9884C0 24.6517 1.34833 26 3.01158 26H20.0772C21.7405 26 23.0888 24.6517 23.0888 22.9884V14.0541C23.0888 12.3908 21.7405 11.0425 20.0772 11.0425H3.01158ZM12.749 18.5714C12.749 19.2367 12.2097 19.7761 11.5444 19.7761C10.8791 19.7761 10.3398 19.2367 10.3398 18.5714C10.3398 17.9061 10.8791 17.3668 11.5444 17.3668C12.2097 17.3668 12.749 17.9061 12.749 18.5714ZM14.7568 18.5714C14.7568 20.3456 13.3185 21.7838 11.5444 21.7838C9.77027 21.7838 8.33205 20.3456 8.33205 18.5714C8.33205 16.7973 9.77027 15.3591 11.5444 15.3591C13.3185 15.3591 14.7568 16.7973 14.7568 18.5714Z"
-                fill="#313131" />
+            <img style="vertical-align:middle" width="40" height="45" viewBox="0 0 24 26" fill="none"
+              src="images/wheel.png">
+            <path
+              d="M0.602325 14.6564H9.47491C14.9978 14.6564 19.4749 19.1335 19.4749 24.6564V24.8958H0.602325V14.6564Z"
+              class="change-color" />
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M11.5946 2.00772C8.24037 2.00772 5.52124 4.72686 5.52124 8.08108C5.52124 8.6355 5.07179 9.08494 4.51737 9.08494C3.96296 9.08494 3.51351 8.6355 3.51351 8.08108C3.51351 3.61802 7.13154 0 11.5946 0C16.0577 0 19.6757 3.61802 19.6757 8.08108C19.6757 8.6355 19.2262 9.08494 18.6718 9.08494C18.1174 9.08494 17.668 8.6355 17.668 8.08108C17.668 4.72686 14.9488 2.00772 11.5946 2.00772ZM20.0772 13.0502H3.01158C2.45717 13.0502 2.00772 13.4996 2.00772 14.0541V22.9884C2.00772 23.5428 2.45717 23.9923 3.01158 23.9923H20.0772C20.6316 23.9923 21.0811 23.5428 21.0811 22.9884V14.0541C21.0811 13.4996 20.6316 13.0502 20.0772 13.0502ZM3.01158 11.0425C1.34833 11.0425 0 12.3908 0 14.0541V22.9884C0 24.6517 1.34833 26 3.01158 26H20.0772C21.7405 26 23.0888 24.6517 23.0888 22.9884V14.0541C23.0888 12.3908 21.7405 11.0425 20.0772 11.0425H3.01158ZM12.749 18.5714C12.749 19.2367 12.2097 19.7761 11.5444 19.7761C10.8791 19.7761 10.3398 19.2367 10.3398 18.5714C10.3398 17.9061 10.8791 17.3668 11.5444 17.3668C12.2097 17.3668 12.749 17.9061 12.749 18.5714ZM14.7568 18.5714C14.7568 20.3456 13.3185 21.7838 11.5444 21.7838C9.77027 21.7838 8.33205 20.3456 8.33205 18.5714C8.33205 16.7973 9.77027 15.3591 11.5444 15.3591C13.3185 15.3591 14.7568 16.7973 14.7568 18.5714Z"
+              fill="#313131" />
             </img>
             <h3>Convenient Note-taking for Handicapped Students</h3>
-            <p>According to data from the National Center for Education Statistics, there are nearly 7 million disabled students in the U.S., which makes up 14% of national public school enrollment. For most of them, note-taking in the lectures is incredibly overwhelming. EZnote makes their study lives easier by automatically generating PDF notes from lecture videos.</p>
+            <p>According to data from the National Center for Education Statistics, there are nearly 7 million disabled
+              students in the U.S., which makes up 14% of national public school enrollment. For most of them,
+              note-taking in the lectures is incredibly overwhelming. EZnote makes their study lives easier by
+              automatically generating PDF notes from lecture videos.</p>
           </div>
           <div class="feature">
             <svg width="39" height="36" viewBox="0 0 39 36" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -211,7 +218,9 @@
                 fill="#FEE7E5" />
             </svg>
             <h3>Easy to Use</h3>
-            <p>EZnote generates lecture notes in PDF format with only a click of button. All that the user needs to do is just to upload a lecture video or record the lecture in real time, and the note will be automatically generated.</p>
+            <p>EZnote generates lecture notes in PDF format with only a click of button. All that the user needs to do
+              is just to upload a lecture video or record the lecture in real time, and the note will be automatically
+              generated.</p>
           </div>
           <div class="feature">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 28 26" width="42" height="40">
@@ -222,14 +231,17 @@
                 clip-rule="evenodd" />
             </svg>
             <h3>Universal conversion</h3>
-            <p>Our automatic note taker works on any OS, including Windows, Mac, and Linux. Because of this, you can generate lecture notes from any OS or device as long as you have an Internet connection.</p>
+            <p>Our automatic note taker works on any OS, including Windows, Mac, and Linux. Because of this, you can
+              generate lecture notes from any OS or device as long as you have an Internet connection.</p>
           </div>
           <div class="feature">
-            <img style="vertical-align:middle" src = "images/live.png" fill="none" viewBox="0 0 26 24" width="48" height="43">
-              <defs />
+            <img style="vertical-align:middle" src="images/live.png" fill="none" viewBox="0 0 26 24" width="48"
+              height="43">
+            <defs />
             </img>
             <h3>Live Note Taking</h3>
-            <p>EZnote takes time-series data to generate lecture notes in real time. This greatly improves learning and teaching efficiency as it enables users to record codes while they are in the class.</p>
+            <p>EZnote takes time-series data to generate lecture notes in real time. This greatly improves learning and
+              teaching efficiency as it enables users to record codes while they are in the class.</p>
           </div>
         </section>
       </div>

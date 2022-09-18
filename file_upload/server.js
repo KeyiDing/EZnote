@@ -39,8 +39,8 @@ router.post("/upload-single-file", upload.single("file"), (ctx) => {
   PythonShell.run('main.py', options, function (err) {
     if (err) throw err;
     ctx.body = {
-    message: `file ${ctx.request.file.filename} has saved on the server`,
-    url: `http://localhost:${PORT}/${ctx.request.file.originalname}`,
+    message: "Processing completed!",
+    url: path.resolve("/Users/chris.w/EZnote/notes.pdf")
     };
   });
 });
