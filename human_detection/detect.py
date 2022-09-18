@@ -45,14 +45,23 @@ def detect(frame):
         if score < 0.5 or label != "person":
             continue          
     
-        xmax += 0.25*(xmax-xmin)
+        xmax += 0.05*(xmax-xmin)
         xmax = int(xmax)
         if xmax > frame.shape[1]-1:
             xmax = frame.shape[1]-1
-        xmin -= 0.25*(xmax-xmin)
+        xmin -= 0.05*(xmax-xmin)
         xmin = int(xmin)
         if xmin < 0:
             xmin = 0
+            
+        ymax += 0.05*(ymax-ymin)
+        ymax = int(ymax)
+        if ymax > frame.shape[0]-1:
+            ymax = frame.shape[0]-1
+        ymin -= 0.05*(ymax-ymin)
+        ymin = int(ymin)
+        if ymin < 0:
+            ymin = 0
             
         points = np.array([[xmin,ymin],[xmax,ymin],[xmax,ymax],[xmin,ymax]])
         img_boxes = cv2.fillPoly(frame, pts = [points], color =(0,0,0))

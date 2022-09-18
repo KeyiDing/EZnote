@@ -6,15 +6,14 @@ import scipy.spatial.distance
 import numpy as np
 
 
-def ImgtoNote(img):
+def ImgtoNote(img, p):
     (rows, cols, _) = img.shape
 
     # image center
     u0 = cols / 2.0
     v0 = rows / 2.0
-
-    # detected corners on the original image
-    p = order_points(findcoordinates(img))
+    
+    p = order_points(p)
 
     # widths and heights of the projected image
     w1 = scipy.spatial.distance.euclidean(p[0], p[1])
@@ -78,13 +77,14 @@ def ImgtoNote(img):
     dst = cv2.warpPerspective(img, M, (W, H))
 
     dst = cv2.cvtColor(dst, cv2.COLOR_BGR2GRAY)
-    T = threshold_local(dst, 11, offset=10, method="gaussian")
+    T = threshold_local(dst, 21, offset=17, method="gaussian")
     dst = (dst > T).astype("uint8") * 255
     # show the original and scanned images
     print("STEP 3: Apply perspective transform")
-    cv2.imshow("Original", img)
-    cv2.imshow("Scanned", dst)
-    cv2.waitKey(0)
+    # cv2.imshow("Original", img)
+    # cv2.imshow("Scanned", dst)
+    # cv2.waitKey(0)
+    return dst
 
 
 def findcoordinates(image):
