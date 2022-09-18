@@ -1,16 +1,20 @@
+from genericpath import exists
 import numpy as np
 import cv2
 import numpy
 import sys
+import os
+
+from image_process.formatImg import ImgtoNote
 sys.path.append("./human_detection/")
 import detect
 
 sys.path.append("./image_process/")
 import formatImg
 
-def main():
+def note(video_path):
     # cap = cv2.VideoCapture("Movie on 2022-9-17 at 2.19 PM.mov")
-    cap = cv2.VideoCapture("video1630936765.mp4")
+    cap = cv2.VideoCapture(video_path)
     
     ret, frame = cap.read()
     cor = formatImg.findcoordinates(frame)
@@ -29,7 +33,7 @@ def main():
     count = 0
     while(True):
         count += 1
-        if count % 5 != 0:
+        if count % 50 != 0:
             cap.read()
             continue
         #Capture frame-by-frame
@@ -52,6 +56,16 @@ def main():
                 square_img[np.all(square_img == (0, 0, 0), axis=-1)] = final[np.all(square_img == (0, 0, 0), axis=-1)]
                 final = square_img
                 cv2.imshow('Result',final)
+                
+        if count % 100 == 0:  
+            if count / 100 == 1:  
+                new_cor = cor.reshape((4,2))
+                new_cor[:,0] -= x_min
+                new_cor[:,1] -= y_min
+            note_img = ImgtoNote(final, new_cor)
+            # cv2.imshow("Result",note_img)
+            cv2.imwrite("./notes/note_{}.png".format(int(count/300)),note_img)
+            cv2.imwrite("final.png",final)
  
         if cv2.waitKey(1) & 0xFF == ord('q'):
             break
@@ -60,4 +74,4 @@ def main():
     cv2.destroyAllWindows()
 
 if __name__ == '__main__':
-    main()
+    note("IMG_1554.MOV")
