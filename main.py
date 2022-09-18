@@ -64,8 +64,8 @@ def note(video_path):
             note_img = formatImg.ImgtoNote(final, new_cor)
             # cv2.imshow("Result",note_img)
 
-            cv2.imwrite("./notes/note_{}.png".format(int(count / 300)), note_img)
-            cv2.imwrite("final.png", final)
+            cv2.imwrite("/Users/chris.w/EZnote/notes/note_{}.png".format(int(count / 300)), note_img)
+            cv2.imwrite("/Users/chris.w/EZnote/final.png", final)
 
         if cv2.waitKey(1) & 0xFF == ord('q'):
             break
@@ -75,14 +75,12 @@ def note(video_path):
 
 
 if __name__ == '__main__':
-    note("test.mov")
+    note("/Users/chris.w/EZnote/file_upload/uploadFiles/test.mov")
 
     # convert images to pdf
     pdf = FPDF()
-    for filename in sorted(os.listdir("notes")):
-        if not filename.startswith('.'):
-            pdf.add_page()
-            path = "notes/" + filename
-            print(path)
-            pdf.image(path)
-    pdf.output("notes.pdf", "F")
+    pdf.add_page()
+    path = "/Users/chris.w/EZnote/notes/note_8.png"
+    pdf.image(path)
+    pdf.output("/Users/chris.w/EZnote/notes.pdf", "F")
+    
