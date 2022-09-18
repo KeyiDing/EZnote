@@ -11,16 +11,13 @@ detector = hub.load("https://tfhub.dev/tensorflow/efficientdet/lite2/detection/1
 labels = pd.read_csv('./human_detection/labels.csv',sep=';',index_col='ID')
 labels = labels['OBJECT (2017 REL.)']
 
-
-# live camera
-# cap = cv2.VideoCapture(0)
-
 # video IO
 
 def detect(frame):
     #Resize to respect the input_shape
-    inp = imutils.resize(frame, height=512)
+    # inp = imutils.resize(frame, height=512)
     inp = frame
+
     
     # cv2.imwrite("frame.png", frame)
 
@@ -45,10 +42,19 @@ def detect(frame):
     img_boxes = []
     
     for score, (ymin,xmin,ymax,xmax), label in zip(pred_scores, pred_boxes, pred_labels):
-        if score < 0.5:
+        if score < 0.5 or label != "person":
             continue          
+    
+        xmax += 0.25*(xmax-xmin)
+        xmax = int(xmax)
+        if xmax > frame.shape[1]-1:
+            xmax = frame.shape[1]-1
+        xmin -= 0.25*(xmax-xmin)
+        xmin = int(xmin)
+        if xmin < 0:
+            xmin = 0
+            
         points = np.array([[xmin,ymin],[xmax,ymin],[xmax,ymax],[xmin,ymax]])
-        img_boxes = cv2.fillPoly(frame, pts = [points], color =(np.nan,np.nan,np.nan))
-        img_boxes  = imutils.resize(img_boxes, height=720)
+        img_boxes = cv2.fillPoly(frame, pts = [points], color =(0,0,0))
   
     return img_boxes
