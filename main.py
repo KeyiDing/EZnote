@@ -9,10 +9,14 @@ sys.path.append("./image_process/")
 import formatImg
 
 def main():
-    cap = cv2.VideoCapture("Movie on 2022-9-17 at 2.19 PM.mov")
+    # cap = cv2.VideoCapture("Movie on 2022-9-17 at 2.19 PM.mov")
+    cap = cv2.VideoCapture("video1630936765.mp4")
     
     ret, frame = cap.read()
     cor = formatImg.findcoordinates(frame)
+    while (len(cor)==0):
+        ret, frame = cap.read()
+        cor = formatImg.findcoordinates(frame)
     
     x_max = int(max(cor[:,:,0])[0])
     x_min = int(min(cor[:,:,0])[0])
@@ -25,7 +29,7 @@ def main():
     count = 0
     while(True):
         count += 1
-        if count % 100 != 0:
+        if count % 5 != 0:
             cap.read()
             continue
         #Capture frame-by-frame
@@ -37,6 +41,7 @@ def main():
         img_boxes = detect.detect(frame)
         if len(img_boxes) != 0:
             cv2.drawContours(img_boxes, np.int32([cor]), -1, (0, 255, 0), 2)
+            # cv2.imshow('Result',img_boxes)
         
             square_img = img_boxes[y_min:y_max,x_min:x_max]
             # cv2.imshow('Result',square_img)

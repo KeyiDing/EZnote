@@ -125,7 +125,7 @@ def findcoordinates(image):
             return screenCnt * ratio
     # show the contour (outline) of the piece of paper
     print("STEP 2: Find contours of paper")
-    return -1
+    return []
 
 
 def order_points(pts):
