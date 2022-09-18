@@ -102,9 +102,9 @@
                   const percentCompleted = Math.round(
                     (progressEvent.loaded * 100) / progressEvent.total
                   );
-                  document.getElementById("p").innerHTML = `Upload Progress: ${percentCompleted}%`
+                  document.getElementById("p1").innerHTML = `Upload Progress: ${percentCompleted}%`
                   if (percentCompleted === 100) {
-                    document.getElementById("p").innerHTML = "Server Processing...";
+                    document.getElementById("p1").innerHTML = "Server Processing...";
                   }
                 }
               })
