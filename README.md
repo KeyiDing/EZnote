@@ -1,5 +1,7 @@
 # EZnote
 
+[HopHacks Project Link](https://devpost.com/software/eznote)
+
 ## Inspiration 💭
 Have you ever imagined how hard it is for students with disability to take notes during lectures? 
 According to data from the National Center for Education Statistics, there are nearly 7 million disabled students in the U.S., which makes up 14% of national public school enrollment. For many of them, note-taking is an incredibly difficult task. To tackle this problem, some schools like our school, Johns Hopkins University, offer note-taking accommodations by recruiting peer note-takers. However, this approach is sometimes ineffective as there is often a lack of volunteering note-takers, and it also results in a waste of resources.
